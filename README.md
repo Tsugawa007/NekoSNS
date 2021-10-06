@@ -20,5 +20,5 @@ Ruby、Railsの勉強のためにを元に作成
   <dd>NekoSNSとはページのデザイン</dd>
 </dl>
 
-[進捗]
-
+<h3>進捗</h3>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Tgg7E_X73Ug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
