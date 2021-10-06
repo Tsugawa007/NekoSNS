@@ -57,3 +57,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #日本語にするやつ
 gem 'rails-i18n'
+
+#パスワード暗号化するやつ
+gem 'bcrypt'

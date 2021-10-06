@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user
   before_action :ensure_correct_user,{only: [:edit,:update,:destroy]}
+  $picture_num = 1
 
   def index
     @posts = Post.all.order(created_at: :desc)
@@ -24,12 +25,14 @@ class PostsController < ApplicationController
       )
     if params[:image]
       #Userの名前入れる
-      @post.post_name = "#{@current_user.name}_#{@post.id}.jpg"
+      @post.post_name = "#{@current_user.name}_#{$picture_num}.jpg"
       image = params[:image]
       File.binwrite("public/post_images/#{@post.post_name}",image.read)
+      
     end
 
     if @post.save
+      $picture_num += 1
       body = File.open("public/post_images/#{@post.post_name}", 'r') { |io| io.read }
       neko = Utils::NekoApi.new(body)
       if neko.ans == 0
@@ -37,13 +40,16 @@ class PostsController < ApplicationController
         redirect_to("/posts/index") 
       elsif neko.ans == 1
         flash[:notice] = "不適切な写真です"
+        @post.destroy
         render("posts/new")
       else neko.ans == 2
         flash[:notice] = "写真の中に猫がいません"
+        @post.destroy
         render("posts/new")
       end
     else
       flash[:notice] = "猫が含まれていません"
+      @post.destroy
       render("posts/new")
     end
   end
@@ -56,8 +62,6 @@ class PostsController < ApplicationController
     @post = Post.find_by(id: params[:id])
     @post.content = params[:content]
     if params[:image]
-      #Userの名前入れる
-      @post.post_name = "#{@post.id}.jpg"
       image = params[:image]
       File.binwrite("public/post_images/#{@post.post_name}",image.read)
     end

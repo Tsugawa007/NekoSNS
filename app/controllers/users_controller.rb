@@ -68,8 +68,8 @@ class UsersController < ApplicationController
   end
 
   def login
-    @user = User.find_by( name: params[:name],password: params[:password] )
-    if @user
+    @user = User.find_by( name: params[:name])
+    if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       flash[:notice] = "ログインしました"
       redirect_to("/posts/index")
