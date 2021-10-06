@@ -21,4 +21,4 @@ Ruby、Railsの勉強のためにを元に作成
 </dl>
 
 <h3>進捗</h3>
-[![](https://img.youtube.com/vi/Tgg7E_X73Ug/0.jpg)](https://www.youtube.com/watch?v=Tgg7E_X73Ug)
+![](https://img.youtube.com/vi/Tgg7E_X73Ug/0.jpg)](https://www.youtube.com/watch?v=Tgg7E_X73Ug)
