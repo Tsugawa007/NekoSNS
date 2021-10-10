@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 2021_10_06_122734) do
     t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "post_image"
     t.string "post_name"
     t.integer "user_id"
   end
