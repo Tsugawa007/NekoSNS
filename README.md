@@ -20,6 +20,11 @@ Ruby、Railsの勉強のためにを元に作成
   <dd>NekoSNSとはページのデザイン</dd>
 </dl>
 
+
 <h3>進捗</h3>
 Youtubeの動画URL
 https://www.youtube.com/watch?v=Tgg7E_X73Ug
+
+<h4>10月10日</h4>
+NekoSNSについての機能説明追加
+
